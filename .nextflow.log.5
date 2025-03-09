@@ -1,0 +1,360 @@
+Mar-09 18:49:30.908 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf --isolates -without-conda --override_basecaller_cfg dna_r10.4.1_e8.2_400bps_hac@v4.3.0 --fastq s_typhi.fastq.gz -resume
+Mar-09 18:49:31.177 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.10.4
+Mar-09 18:49:31.200 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/m3/.nextflow/plugins; core-plugins: nf-amazon@2.9.2,nf-azure@1.10.2,nf-cloudcache@0.4.2,nf-codecommit@0.2.2,nf-console@1.1.4,nf-google@1.15.3,nf-tower@1.9.3,nf-wave@1.7.4
+Mar-09 18:49:31.238 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Mar-09 18:49:31.239 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Mar-09 18:49:31.243 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Mar-09 18:49:31.258 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Mar-09 18:49:31.282 [main] DEBUG nextflow.config.ConfigBuilder - Found config home: /home/m3/.nextflow/config
+Mar-09 18:49:31.285 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/nextflow.config
+Mar-09 18:49:31.288 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/m3/.nextflow/config
+Mar-09 18:49:31.289 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/nextflow.config
+Mar-09 18:49:31.326 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/m3/.nextflow/secrets/store.json
+Mar-09 18:49:31.332 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@53b98ff6] - activable => nextflow.secret.LocalSecretsProvider@53b98ff6
+Mar-09 18:49:31.350 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Mar-09 18:49:31.838 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Mar-09 18:49:32.195 [main] DEBUG nextflow.config.ConfigBuilder - Disabling execution with Conda as requested by command-line option `-without-conda`
+Mar-09 18:49:32.226 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
+Mar-09 18:49:32.245 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [insane_magritte] DSL2 - revision: 097f100e46
+Mar-09 18:49:32.247 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Mar-09 18:49:32.247 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Mar-09 18:49:32.306 [main] DEBUG nextflow.Session - Session UUID: 6c524f0c-245f-4bb9-b010-3d4a52f544bf
+Mar-09 18:49:32.306 [main] DEBUG nextflow.Session - Run name: insane_magritte
+Mar-09 18:49:32.307 [main] DEBUG nextflow.Session - Executor pool size: 20
+Mar-09 18:49:32.316 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Mar-09 18:49:32.321 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=60; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Mar-09 18:49:32.345 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 24.10.4 build 5934
+  Created: 20-01-2025 16:47 UTC (16:47 GMT)
+  System: Linux 6.8.0-52-generic
+  Runtime: Groovy 4.0.23 on OpenJDK 64-Bit Server VM 21-internal-adhoc.conda.src
+  Encoding: UTF-8 (UTF-8)
+  Process: 108378@m3-HP-ZBook-Studio-16-inch-G9-Mobile-Workstation-PC [127.0.1.1]
+  CPUs: 20 - Mem: 31 GB (21 GB) - Swap: 2 GB (2 GB)
+Mar-09 18:49:32.404 [main] DEBUG nextflow.Session - Work-dir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work [ext2/ext3]
+Mar-09 18:49:32.446 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Mar-09 18:49:32.456 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Mar-09 18:49:32.498 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Mar-09 18:49:32.508 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 21; maxThreads: 1000
+Mar-09 18:49:32.634 [main] DEBUG nextflow.Session - Session start
+Mar-09 18:49:32.638 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/output/execution/trace.txt
+Mar-09 18:49:32.645 [main] DEBUG nextflow.Session - Using default localLib path: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/lib
+Mar-09 18:49:32.650 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/lib
+Mar-09 18:49:32.650 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/lib/nfcore_external_java_deps.jar
+Mar-09 18:49:34.863 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Mar-09 18:49:34.874 [main] WARN  nextflow.NextflowMeta$Preview - NEXTFLOW RECURSION IS A PREVIEW FEATURE - SYNTAX AND FUNCTIONALITY CAN CHANGE IN FUTURE RELEASES
+Mar-09 18:49:36.988 [main] INFO  nextflow.Nextflow - 
+[0;92m||||||||||   [0m[2m_____ ____ ___ ____  __  __ _____      _       _
+[0;92m||||||||||  [0m[2m| ____|  _ \_ _|___ \|  \/  | ____|    | | __ _| |__  ___
+[0;33m|||||       [0m[2m|  _| | |_) | |  __) | |\/| |  _| _____| |/ _` | '_ \/ __|
+[0;33m|||||       [0m[2m| |___|  __/| | / __/| |  | | |__|_____| | (_| | |_) \__ \
+[0;94m||||||||||  [0m[2m|_____|_|  |___|_____|_|  |_|_____|    |_|\__,_|_.__/|___/
+[0;94m||||||||||  [0m[1mwf-bacterial-genomes v1.4.1[0m
+[2m--------------------------------------------------------------------------------[0m
+[1mCore Nextflow options[0m
+  [0;34mrunName                : [0;32minsane_magritte[0m
+  [0;34mcontainerEngine        : [0;32mdocker[0m
+  [0;34mcontainer              : [0;32m[withLabel:wf_common:ontresearch/wf-common:shad28e55140f75a68f59bbecc74e880aeab16ab158, withLabel:wfbacterialgenomes:ontresearch/wf-bacterial-genomes:sha2a8c43007876f1c057a194b236e81698a68484ff, withLabel:prokka:ontresearch/prokka:sha08669655982fbef7c750c7895e97e100196c4967, withLabel:medaka:ontresearch/medaka:sha447c70a639b8bcf17dc49b51e74dfcde6474837b, withLabel:amr:ontresearch/resfinder:sha024ca117d06e35c5e4116bcb2cd6235b96916fcf, withLabel:mlst:ontresearch/mlst:sha8f8f258761d66116deb5b58b4204e5b7783a0c90, withLabel:seqsero2:ontresearch/seqsero2:sha96053b39b281e404cf1cf9c4684fa7dbc4e2761d, withLabel:rgi:quay.io/biocontainers/rgi:rgi, withLabel:amrfinder:staphb/ncbi-amrfinderplus:3.10.20, withLabel:hamronize:osadio95/hamronize_os:latest][0m
+  [0;34mlaunchDir              : [0;32m/home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes[0m
+  [0;34mworkDir                : [0;32m/home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work[0m
+  [0;34mprojectDir             : [0;32m/home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes[0m
+  [0;34muserName               : [0;32mm3[0m
+  [0;34mprofile                : [0;32mstandard[0m
+  [0;34mconfigFiles            : [0;32m/home/m3/.nextflow/config, /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/nextflow.config[0m
+
+[1mInput Options[0m
+  [0;34mfastq                  : [0;32ms_typhi.fastq.gz[0m
+
+[1mIsolate options[0m
+  [0;34misolates               : [0;32mtrue[0m
+
+[1mAdvanced Options[0m
+  [0;34moverride_basecaller_cfg: [0;32mdna_r10.4.1_e8.2_400bps_hac@v4.3.0[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+[2m--------------------------------------------------------------------------------[0m
+If you use epi2me-labs/wf-bacterial-genomes for your analysis please cite:
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+
+[2m--------------------------------------------------------------------------------[0m
+This is epi2me-labs/wf-bacterial-genomes v1.4.1.
+[2m--------------------------------------------------------------------------------[0m
+Mar-09 18:49:37.754 [main] WARN  nextflow.Nextflow - Overriding basecall model with 'dna_r10.4.1_e8.2_400bps_hac@v4.3.0'.
+Mar-09 18:49:37.767 [main] INFO  nextflow.Nextflow - Searching input for [.fastq, .fastq.gz, .fq, .fq.gz] files.
+Mar-09 18:49:37.907 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `ingress,wf_common` for process with name fastcat
+Mar-09 18:49:37.917 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:37.917 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:37.924 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Mar-09 18:49:37.932 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=20; memory=31 GB; capacity=20; pollInterval=100ms; dumpInterval=5m
+Mar-09 18:49:37.934 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Mar-09 18:49:38.037 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:ingressCheckpoint
+Mar-09 18:49:38.039 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.039 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.058 [main] INFO  nextflow.Nextflow - Running Denovo assembly.
+Mar-09 18:49:38.085 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:deNovo
+Mar-09 18:49:38.088 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.088 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.110 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:alignReads
+Mar-09 18:49:38.111 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.112 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.123 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:alignmentCheckpoint
+Mar-09 18:49:38.124 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.125 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.130 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:readStats
+Mar-09 18:49:38.131 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.131 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.136 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:coverStats
+Mar-09 18:49:38.138 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.138 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.143 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:medaka` matches labels `medaka` for process with name calling_pipeline:splitRegions
+Mar-09 18:49:38.144 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.144 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.178 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:medaka` matches labels `medaka` for process with name calling_pipeline:medakaInference_consensus
+Mar-09 18:49:38.180 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.180 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.201 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:medaka` matches labels `medaka` for process with name calling_pipeline:medakaConsensus
+Mar-09 18:49:38.202 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.202 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.210 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:assemblyCheckpoint
+Mar-09 18:49:38.212 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.212 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.226 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:variantCheckpoint
+Mar-09 18:49:38.229 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.229 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.234 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:prokka` matches labels `prokka` for process with name calling_pipeline:runProkka
+Mar-09 18:49:38.237 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.237 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.246 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:annotationCheckpoint
+Mar-09 18:49:38.247 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.247 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.255 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:mlst` matches labels `mlst` for process with name calling_pipeline:run_isolates:mlstSearch
+Mar-09 18:49:38.256 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.256 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.263 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:run_isolates:getPointfinderSpecies
+Mar-09 18:49:38.264 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.265 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.274 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:amr` matches labels `amr` for process with name calling_pipeline:run_isolates:resfinder
+Mar-09 18:49:38.275 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.275 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.283 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:run_isolates:processResfinder
+Mar-09 18:49:38.284 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.284 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.293 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:seqsero2` matches labels `seqsero2` for process with name calling_pipeline:run_isolates:serotyping
+Mar-09 18:49:38.295 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.295 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.300 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:rgi` matches labels `rgi` for process with name calling_pipeline:run_isolates:rgi
+Mar-09 18:49:38.301 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.302 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.307 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:amrfinder` matches labels `amrfinder` for process with name calling_pipeline:run_isolates:amrfinder
+Mar-09 18:49:38.308 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.308 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.314 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:hamronize` matches labels `hamronize` for process with name calling_pipeline:run_isolates:rgi_hamronize
+Mar-09 18:49:38.315 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.316 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.321 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:hamronize` matches labels `hamronize` for process with name calling_pipeline:run_isolates:amrfinder_hamronize
+Mar-09 18:49:38.322 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.323 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.328 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:amr` matches labels `amr` for process with name calling_pipeline:run_isolates:resfinder2
+Mar-09 18:49:38.330 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.330 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.335 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:hamronize` matches labels `hamronize` for process with name calling_pipeline:run_isolates:resfinder_hamronize
+Mar-09 18:49:38.336 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.336 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.342 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:hamronize` matches labels `hamronize` for process with name calling_pipeline:run_isolates:hamronize
+Mar-09 18:49:38.343 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.343 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.358 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:amrCheckpoint
+Mar-09 18:49:38.359 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.359 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.363 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:prokka` matches labels `prokka` for process with name calling_pipeline:prokkaVersion
+Mar-09 18:49:38.364 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.364 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.371 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:medaka` matches labels `medaka` for process with name calling_pipeline:medakaVersion
+Mar-09 18:49:38.372 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.372 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.376 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:mlst` matches labels `mlst` for process with name calling_pipeline:mlstVersion
+Mar-09 18:49:38.377 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.377 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.381 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:getVersions
+Mar-09 18:49:38.382 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.382 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.386 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:getParams
+Mar-09 18:49:38.387 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.387 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.411 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:collect_results
+Mar-09 18:49:38.413 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.413 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.422 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:createRunModel
+Mar-09 18:49:38.424 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.424 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.487 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:makeReport
+Mar-09 18:49:38.489 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.489 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.499 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:reportingCheckpoint
+Mar-09 18:49:38.501 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.501 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.508 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:makePerSampleReports
+Mar-09 18:49:38.510 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.510 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.522 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:perSampleReportingCheckpoint
+Mar-09 18:49:38.524 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.524 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.546 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:accumulateCheckpoints
+Mar-09 18:49:38.548 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.548 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.559 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:collectFastqIngressResultsInDir
+Mar-09 18:49:38.560 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.560 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.586 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name output
+Mar-09 18:49:38.588 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:49:38.588 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:49:38.591 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: resfinder, move_or_compress_fq_file, deNovo, calling_pipeline:getParams, calling_pipeline:mlstVersion, hamronize, medakaInference, checkBamHeaders, medakaVersion, mergeBams, alignReads, calling_pipeline:run_isolates:resfinder_hamronize, output, medakaVariant, rgi_hamronize, collectFastqIngressResultsInDir, medakaInference_consensus, amrCheckpoint, makeReport, calling_pipeline:collectFastqIngressResultsInDir, getVersions, calling_pipeline:coverStats, validateIndex, calling_pipeline:readStats, calling_pipeline:run_isolates:processResfinder, calling_pipeline:medakaConsensus, serotyping, calling_pipeline:ingressCheckpoint, getPointfinderSpecies, calling_pipeline:getVersions, calling_pipeline:run_isolates:amrfinder_hamronize, assemblyCheckpoint, calling_pipeline:run_isolates:resfinder2, bamstats, coverStats, calling_pipeline:runProkka, calling_pipeline:accumulateCheckpoints, resfinder2, amrfinder, calling_pipeline:run_isolates:rgi_hamronize, calling_pipeline:createRunModel, calling_pipeline:run_isolates:rgi, fastcat, medakaInference_variant, calling_pipeline:run_isolates:serotyping, mlstVersion, collect_results, resfinder_hamronize, samtools_index, accumulateCheckpoints, getParams, calling_pipeline:amrCheckpoint, calling_pipeline:prokkaVersion, calling_pipeline:alignReads, sortBam, medakaConsensus, calling_pipeline:medakaInference_consensus, validate_sample_sheet, calling_pipeline:run_isolates:resfinder, calling_pipeline:reportingCheckpoint, calling_pipeline:medakaVersion, calling_pipeline:variantCheckpoint, calling_pipeline:run_isolates:mlstSearch, calling_pipeline:run_isolates:hamronize, readStats, runProkka, rgi, calling_pipeline:deNovo, calling_pipeline:run_isolates:getPointfinderSpecies, hamronizeVersion, createRunModel, calling_pipeline:collect_results, variantCheckpoint, prokkaVersion, perSampleReportingCheckpoint, calling_pipeline:makePerSampleReports, splitRegions, alignmentCheckpoint, calling_pipeline:alignmentCheckpoint, ingressCheckpoint, annotationCheckpoint, calling_pipeline:makeReport, calling_pipeline:splitRegions, split_fq_file, amrfinder_hamronize, processResfinder, calling_pipeline:run_isolates:amrfinder, calling_pipeline:annotationCheckpoint, reportingCheckpoint, mlstSearch, calling_pipeline:perSampleReportingCheckpoint, calling_pipeline:assemblyCheckpoint, catSortBams, makePerSampleReports
+Mar-09 18:49:38.593 [main] DEBUG nextflow.Session - Igniting dataflow network (48)
+Mar-09 18:49:38.594 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > fastcat
+Mar-09 18:49:38.594 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:ingressCheckpoint
+Mar-09 18:49:38.594 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:deNovo
+Mar-09 18:49:38.594 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:alignReads
+Mar-09 18:49:38.594 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:alignmentCheckpoint
+Mar-09 18:49:38.594 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:readStats
+Mar-09 18:49:38.594 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:coverStats
+Mar-09 18:49:38.594 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:splitRegions
+Mar-09 18:49:38.594 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:medakaInference_consensus
+Mar-09 18:49:38.594 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:medakaConsensus
+Mar-09 18:49:38.594 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:assemblyCheckpoint
+Mar-09 18:49:38.594 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:variantCheckpoint
+Mar-09 18:49:38.594 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:runProkka
+Mar-09 18:49:38.594 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:annotationCheckpoint
+Mar-09 18:49:38.594 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:mlstSearch
+Mar-09 18:49:38.596 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:getPointfinderSpecies
+Mar-09 18:49:38.596 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:resfinder
+Mar-09 18:49:38.596 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:processResfinder
+Mar-09 18:49:38.596 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:serotyping
+Mar-09 18:49:38.597 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:rgi
+Mar-09 18:49:38.597 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:amrfinder
+Mar-09 18:49:38.597 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:rgi_hamronize
+Mar-09 18:49:38.598 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:amrfinder_hamronize
+Mar-09 18:49:38.599 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:resfinder2
+Mar-09 18:49:38.599 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:resfinder_hamronize
+Mar-09 18:49:38.599 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:hamronize
+Mar-09 18:49:38.599 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:amrCheckpoint
+Mar-09 18:49:38.599 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:prokkaVersion
+Mar-09 18:49:38.599 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:medakaVersion
+Mar-09 18:49:38.599 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:mlstVersion
+Mar-09 18:49:38.599 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:getVersions
+Mar-09 18:49:38.599 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:getParams
+Mar-09 18:49:38.599 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:collect_results
+Mar-09 18:49:38.599 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:createRunModel
+Mar-09 18:49:38.599 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:makeReport
+Mar-09 18:49:38.600 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:reportingCheckpoint
+Mar-09 18:49:38.600 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:makePerSampleReports
+Mar-09 18:49:38.600 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:perSampleReportingCheckpoint
+Mar-09 18:49:38.600 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:accumulateCheckpoints
+Mar-09 18:49:38.600 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:collectFastqIngressResultsInDir
+Mar-09 18:49:38.600 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > output
+Mar-09 18:49:38.601 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_71cf3ce688c2ab9b: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/./modules/local/medaka.nf
+  Script_69aa8e599d5ff218: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/main.nf
+  Script_d9e3619109b1b7e6: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/./modules/local/isolates.nf
+  Script_9674c65acf93e4e1: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/./lib/ingress.nf
+  Script_29e49c8e03a0755c: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/./modules/local/checkpoints.nf
+Mar-09 18:49:38.601 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Mar-09 18:49:38.601 [main] DEBUG nextflow.Session - Session await
+Mar-09 18:49:38.753 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [7a/9eafcb] Cached process > calling_pipeline:getParams
+Mar-09 18:49:38.753 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [ac/7f7b0a] Cached process > calling_pipeline:prokkaVersion
+Mar-09 18:49:38.769 [Actor Thread 8] INFO  nextflow.processor.TaskProcessor - [67/85ce83] Cached process > fastcat (1)
+Mar-09 18:49:38.783 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [47/151f1d] Cached process > calling_pipeline:medakaVersion
+Mar-09 18:49:38.794 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [f1/c8f337] Cached process > calling_pipeline:mlstVersion
+Mar-09 18:49:38.799 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [dc/22f2e7] Cached process > calling_pipeline:variantCheckpoint (1)
+Mar-09 18:49:38.807 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [60/762b1a] Cached process > calling_pipeline:ingressCheckpoint (1)
+Mar-09 18:49:38.810 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [8c/cdbbd6] Cached process > calling_pipeline:getVersions
+Mar-09 18:49:38.822 [Actor Thread 20] INFO  nextflow.processor.TaskProcessor - [a2/9ff82f] Cached process > calling_pipeline:collectFastqIngressResultsInDir (1)
+Mar-09 18:49:38.835 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [d5/d70286] Cached process > calling_pipeline:deNovo (1)
+Mar-09 18:49:38.859 [Actor Thread 20] INFO  nextflow.processor.TaskProcessor - [78/cf2a38] Cached process > calling_pipeline:alignReads (1)
+Mar-09 18:49:38.877 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [20/b55933] Cached process > calling_pipeline:alignmentCheckpoint (1)
+Mar-09 18:49:38.880 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [8b/0fde35] Cached process > calling_pipeline:splitRegions (1)
+Mar-09 18:49:38.880 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [90/6f22e9] Cached process > calling_pipeline:readStats (1)
+Mar-09 18:49:38.888 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [48/478f0a] Cached process > calling_pipeline:coverStats (1)
+Mar-09 18:49:38.917 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [f4/0e4983] Cached process > calling_pipeline:medakaInference_consensus (2)
+Mar-09 18:49:38.917 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [f1/5afe70] Cached process > calling_pipeline:medakaInference_consensus (7)
+Mar-09 18:49:38.917 [Actor Thread 5] INFO  nextflow.processor.TaskProcessor - [6e/05d707] Cached process > calling_pipeline:medakaInference_consensus (5)
+Mar-09 18:49:38.917 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [5f/a4edc6] Cached process > calling_pipeline:medakaInference_consensus (3)
+Mar-09 18:49:38.918 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [c3/f746b0] Cached process > calling_pipeline:medakaInference_consensus (1)
+Mar-09 18:49:38.919 [Actor Thread 17] INFO  nextflow.processor.TaskProcessor - [74/7a4a47] Cached process > calling_pipeline:medakaInference_consensus (4)
+Mar-09 18:49:38.923 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [d8/3e35d5] Cached process > calling_pipeline:medakaInference_consensus (6)
+Mar-09 18:49:38.940 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 18:49:38.944 [Task submitter] INFO  nextflow.Session - [75/164545] Submitted process > calling_pipeline:accumulateCheckpoints (1)
+Mar-09 18:49:38.972 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [89/40dcbd] Cached process > calling_pipeline:medakaConsensus (1)
+Mar-09 18:49:38.983 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [de/a30aa7] Cached process > calling_pipeline:run_isolates:mlstSearch (1)
+Mar-09 18:49:38.984 [Actor Thread 3] INFO  nextflow.processor.TaskProcessor - [04/b037a7] Cached process > calling_pipeline:run_isolates:amrfinder (1)
+Mar-09 18:49:38.984 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [a0/60ac6b] Cached process > output (1)
+Mar-09 18:49:38.988 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [ab/fa6cd9] Cached process > calling_pipeline:run_isolates:resfinder2 (1)
+Mar-09 18:49:38.989 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [95/13805e] Cached process > calling_pipeline:assemblyCheckpoint (1)
+Mar-09 18:49:38.990 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [be/ff28f4] Cached process > calling_pipeline:run_isolates:rgi (1)
+Mar-09 18:49:39.001 [Actor Thread 25] INFO  nextflow.processor.TaskProcessor - [4b/ec1d4e] Cached process > calling_pipeline:runProkka (1)
+Mar-09 18:49:39.001 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [22/c9dc8b] Cached process > calling_pipeline:run_isolates:amrfinder_hamronize (1)
+Mar-09 18:49:39.001 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [1c/3168c7] Cached process > calling_pipeline:run_isolates:resfinder_hamronize (1)
+Mar-09 18:49:39.002 [Actor Thread 12] INFO  nextflow.processor.TaskProcessor - [e1/d27aa9] Cached process > calling_pipeline:run_isolates:getPointfinderSpecies (1)
+Mar-09 18:49:39.002 [Actor Thread 1] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=60; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Mar-09 18:49:39.004 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [6b/ceb7d9] Cached process > calling_pipeline:run_isolates:rgi_hamronize (1)
+Mar-09 18:49:39.017 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [73/ddeed1] Cached process > calling_pipeline:run_isolates:serotyping (1)
+Mar-09 18:49:39.019 [Actor Thread 8] INFO  nextflow.processor.TaskProcessor - [82/b01f73] Cached process > calling_pipeline:run_isolates:resfinder (1)
+Mar-09 18:49:39.020 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [66/6756cc] Cached process > calling_pipeline:annotationCheckpoint (1)
+Mar-09 18:49:39.028 [Actor Thread 14] INFO  nextflow.processor.TaskProcessor - [5b/fbe508] Cached process > calling_pipeline:run_isolates:hamronize (1)
+Mar-09 18:49:39.036 [Actor Thread 20] INFO  nextflow.processor.TaskProcessor - [62/30b0e2] Cached process > calling_pipeline:run_isolates:processResfinder (1)
+Mar-09 18:49:39.051 [Actor Thread 6] INFO  nextflow.processor.TaskProcessor - [d7/1afe21] Cached process > calling_pipeline:amrCheckpoint (1)
+Mar-09 18:49:39.054 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [1e/38c633] Cached process > calling_pipeline:collect_results (1)
+Mar-09 18:49:39.061 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [d7/c1458f] Cached process > calling_pipeline:makePerSampleReports (1)
+Mar-09 18:49:39.064 [Actor Thread 20] INFO  nextflow.processor.TaskProcessor - [26/261e34] Cached process > calling_pipeline:createRunModel
+Mar-09 18:49:39.076 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [d0/1b933e] Cached process > calling_pipeline:perSampleReportingCheckpoint (1)
+Mar-09 18:49:39.077 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [c4/dfd613] Cached process > calling_pipeline:makeReport
+Mar-09 18:49:39.087 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [ff/fd0aa7] Cached process > output (3)
+Mar-09 18:49:39.087 [Actor Thread 1] INFO  nextflow.processor.TaskProcessor - [1c/620d98] Cached process > output (7)
+Mar-09 18:49:39.088 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [cb/c59abb] Cached process > output (6)
+Mar-09 18:49:39.089 [Actor Thread 23] INFO  nextflow.processor.TaskProcessor - [1c/02ef52] Cached process > output (2)
+Mar-09 18:49:39.089 [Actor Thread 11] INFO  nextflow.processor.TaskProcessor - [55/1782ee] Cached process > output (8)
+Mar-09 18:49:39.090 [Actor Thread 25] INFO  nextflow.processor.TaskProcessor - [87/a641e4] Cached process > output (9)
+Mar-09 18:49:39.090 [Actor Thread 20] INFO  nextflow.processor.TaskProcessor - [d7/9a1cbb] Cached process > output (5)
+Mar-09 18:49:39.093 [Actor Thread 18] INFO  nextflow.processor.TaskProcessor - [df/b37ae5] Cached process > calling_pipeline:reportingCheckpoint
+Mar-09 18:49:39.093 [Actor Thread 15] INFO  nextflow.processor.TaskProcessor - [95/79e95e] Cached process > output (10)
+Mar-09 18:49:39.095 [Actor Thread 22] INFO  nextflow.processor.TaskProcessor - [e6/1f7022] Cached process > output (11)
+Mar-09 18:49:39.095 [Actor Thread 21] INFO  nextflow.processor.TaskProcessor - [5a/3f0169] Cached process > output (12)
+Mar-09 18:49:39.095 [Actor Thread 8] INFO  nextflow.processor.TaskProcessor - [e6/ec166d] Cached process > output (4)
+Mar-09 18:49:39.140 [Actor Thread 3] INFO  nextflow.processor.TaskProcessor - [b4/5118cc] Cached process > output (13)
+Mar-09 18:49:39.725 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: calling_pipeline:accumulateCheckpoints (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/75/16454562188553e569efe4dd2a0388]
+Mar-09 18:49:39.726 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=60; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Mar-09 18:49:39.762 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 18:49:39.763 [Task submitter] INFO  nextflow.Session - [0c/3455c4] Submitted process > calling_pipeline:accumulateCheckpoints (2)
+Mar-09 18:49:40.581 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 60; name: calling_pipeline:accumulateCheckpoints (2); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/0c/3455c453a91a45e990373ae95ccf68]
+Mar-09 18:49:40.610 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 18:49:40.610 [Task submitter] INFO  nextflow.Session - [85/480033] Submitted process > calling_pipeline:accumulateCheckpoints (3)
+Mar-09 18:49:41.392 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 61; name: calling_pipeline:accumulateCheckpoints (3); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/85/4800337aaee4ef9ea9794ab1f3029f]
+Mar-09 18:49:41.416 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 18:49:41.417 [Task submitter] INFO  nextflow.Session - [0a/e62c89] Submitted process > calling_pipeline:accumulateCheckpoints (4)
+Mar-09 18:49:42.227 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 62; name: calling_pipeline:accumulateCheckpoints (4); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/0a/e62c899a0b4e0d12ef546ab8108575]
+Mar-09 18:49:42.251 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 18:49:42.252 [Task submitter] INFO  nextflow.Session - [75/b140f5] Submitted process > calling_pipeline:accumulateCheckpoints (5)
+Mar-09 18:49:43.035 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 63; name: calling_pipeline:accumulateCheckpoints (5); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/75/b140f50be088645779bf57afb39a89]
+Mar-09 18:49:43.058 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 18:49:43.059 [Task submitter] INFO  nextflow.Session - [8a/83bc4c] Submitted process > calling_pipeline:accumulateCheckpoints (6)
+Mar-09 18:49:43.873 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 64; name: calling_pipeline:accumulateCheckpoints (6); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/8a/83bc4c909c3601355a6ffc806a11b1]
+Mar-09 18:49:43.894 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 18:49:43.895 [Task submitter] INFO  nextflow.Session - [dc/30b69f] Submitted process > calling_pipeline:accumulateCheckpoints (7)
+Mar-09 18:49:44.717 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 65; name: calling_pipeline:accumulateCheckpoints (7); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/dc/30b69f76ecc31bb7c211d917e50438]
+Mar-09 18:49:44.737 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 18:49:44.738 [Task submitter] INFO  nextflow.Session - [0a/4939f6] Submitted process > calling_pipeline:accumulateCheckpoints (8)
+Mar-09 18:49:45.578 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 66; name: calling_pipeline:accumulateCheckpoints (8); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/0a/4939f6e2d1b9b87020993e3a509430]
+Mar-09 18:49:45.584 [main] DEBUG nextflow.Session - Session await > all processes finished
+Mar-09 18:49:45.680 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Mar-09 18:49:45.681 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Mar-09 18:49:45.687 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'TaskFinalizer' shutdown completed (hard=false)
+Mar-09 18:49:45.687 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+Mar-09 18:49:45.963 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=8; failedCount=0; ignoredCount=0; cachedCount=58; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=1.5s; failedDuration=0ms; cachedDuration=1h 15m 40s;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=1 GB; ]
+Mar-09 18:49:45.963 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Mar-09 18:49:45.965 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Mar-09 18:49:47.011 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+Mar-09 18:49:47.268 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Mar-09 18:49:47.305 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Mar-09 18:49:47.305 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

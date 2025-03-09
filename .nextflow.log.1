@@ -1,0 +1,494 @@
+Mar-09 18:55:32.677 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf --isolates -without-conda --override_basecaller_cfg dna_r10.4.1_e8.2_400bps_hac@v4.3.0 --fastq s_typhi.fastq.gz
+Mar-09 18:55:32.907 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.10.4
+Mar-09 18:55:32.930 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/m3/.nextflow/plugins; core-plugins: nf-amazon@2.9.2,nf-azure@1.10.2,nf-cloudcache@0.4.2,nf-codecommit@0.2.2,nf-console@1.1.4,nf-google@1.15.3,nf-tower@1.9.3,nf-wave@1.7.4
+Mar-09 18:55:32.966 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Mar-09 18:55:32.967 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Mar-09 18:55:32.971 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Mar-09 18:55:32.989 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Mar-09 18:55:33.013 [main] DEBUG nextflow.config.ConfigBuilder - Found config home: /home/m3/.nextflow/config
+Mar-09 18:55:33.015 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/nextflow.config
+Mar-09 18:55:33.017 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/m3/.nextflow/config
+Mar-09 18:55:33.018 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/nextflow.config
+Mar-09 18:55:33.050 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/m3/.nextflow/secrets/store.json
+Mar-09 18:55:33.054 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@53b98ff6] - activable => nextflow.secret.LocalSecretsProvider@53b98ff6
+Mar-09 18:55:33.068 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Mar-09 18:55:33.532 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Mar-09 18:55:33.883 [main] DEBUG nextflow.config.ConfigBuilder - Disabling execution with Conda as requested by command-line option `-without-conda`
+Mar-09 18:55:33.911 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
+Mar-09 18:55:33.932 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [friendly_ardinghelli] DSL2 - revision: c1e06ab4f6
+Mar-09 18:55:33.933 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Mar-09 18:55:33.934 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Mar-09 18:55:33.994 [main] DEBUG nextflow.Session - Session UUID: 779b1490-08e7-4a7d-be49-293f63c45ab9
+Mar-09 18:55:33.994 [main] DEBUG nextflow.Session - Run name: friendly_ardinghelli
+Mar-09 18:55:33.995 [main] DEBUG nextflow.Session - Executor pool size: 20
+Mar-09 18:55:34.003 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Mar-09 18:55:34.009 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=60; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Mar-09 18:55:34.032 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 24.10.4 build 5934
+  Created: 20-01-2025 16:47 UTC (16:47 GMT)
+  System: Linux 6.8.0-52-generic
+  Runtime: Groovy 4.0.23 on OpenJDK 64-Bit Server VM 21-internal-adhoc.conda.src
+  Encoding: UTF-8 (UTF-8)
+  Process: 113031@m3-HP-ZBook-Studio-16-inch-G9-Mobile-Workstation-PC [127.0.1.1]
+  CPUs: 20 - Mem: 31 GB (20.3 GB) - Swap: 2 GB (2 GB)
+Mar-09 18:55:34.073 [main] DEBUG nextflow.Session - Work-dir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work [ext2/ext3]
+Mar-09 18:55:34.121 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Mar-09 18:55:34.131 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Mar-09 18:55:34.178 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Mar-09 18:55:34.188 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 21; maxThreads: 1000
+Mar-09 18:55:34.273 [main] DEBUG nextflow.Session - Session start
+Mar-09 18:55:34.276 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/output/execution/trace.txt
+Mar-09 18:55:34.282 [main] DEBUG nextflow.Session - Using default localLib path: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/lib
+Mar-09 18:55:34.285 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/lib
+Mar-09 18:55:34.286 [main] DEBUG nextflow.Session - Adding to the classpath library: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/lib/nfcore_external_java_deps.jar
+Mar-09 18:55:36.767 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Mar-09 18:55:36.780 [main] WARN  nextflow.NextflowMeta$Preview - NEXTFLOW RECURSION IS A PREVIEW FEATURE - SYNTAX AND FUNCTIONALITY CAN CHANGE IN FUTURE RELEASES
+Mar-09 18:55:39.026 [main] INFO  nextflow.Nextflow - 
+[0;92m||||||||||   [0m[2m_____ ____ ___ ____  __  __ _____      _       _
+[0;92m||||||||||  [0m[2m| ____|  _ \_ _|___ \|  \/  | ____|    | | __ _| |__  ___
+[0;33m|||||       [0m[2m|  _| | |_) | |  __) | |\/| |  _| _____| |/ _` | '_ \/ __|
+[0;33m|||||       [0m[2m| |___|  __/| | / __/| |  | | |__|_____| | (_| | |_) \__ \
+[0;94m||||||||||  [0m[2m|_____|_|  |___|_____|_|  |_|_____|    |_|\__,_|_.__/|___/
+[0;94m||||||||||  [0m[1mwf-bacterial-genomes v1.4.1[0m
+[2m--------------------------------------------------------------------------------[0m
+[1mCore Nextflow options[0m
+  [0;34mrunName                : [0;32mfriendly_ardinghelli[0m
+  [0;34mcontainerEngine        : [0;32mdocker[0m
+  [0;34mcontainer              : [0;32m[withLabel:wf_common:ontresearch/wf-common:shad28e55140f75a68f59bbecc74e880aeab16ab158, withLabel:wfbacterialgenomes:ontresearch/wf-bacterial-genomes:sha2a8c43007876f1c057a194b236e81698a68484ff, withLabel:prokka:ontresearch/prokka:sha08669655982fbef7c750c7895e97e100196c4967, withLabel:medaka:ontresearch/medaka:sha447c70a639b8bcf17dc49b51e74dfcde6474837b, withLabel:amr:ontresearch/resfinder:sha024ca117d06e35c5e4116bcb2cd6235b96916fcf, withLabel:mlst:ontresearch/mlst:sha8f8f258761d66116deb5b58b4204e5b7783a0c90, withLabel:seqsero2:ontresearch/seqsero2:sha96053b39b281e404cf1cf9c4684fa7dbc4e2761d, withLabel:rgi:quay.io/biocontainers/rgi:rgi, withLabel:amrfinder:staphb/ncbi-amrfinderplus:3.10.20, withLabel:hamronize:osadio95/hamronize_os:latest][0m
+  [0;34mlaunchDir              : [0;32m/home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes[0m
+  [0;34mworkDir                : [0;32m/home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work[0m
+  [0;34mprojectDir             : [0;32m/home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes[0m
+  [0;34muserName               : [0;32mm3[0m
+  [0;34mprofile                : [0;32mstandard[0m
+  [0;34mconfigFiles            : [0;32m/home/m3/.nextflow/config, /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/nextflow.config[0m
+
+[1mInput Options[0m
+  [0;34mfastq                  : [0;32ms_typhi.fastq.gz[0m
+
+[1mIsolate options[0m
+  [0;34misolates               : [0;32mtrue[0m
+
+[1mAdvanced Options[0m
+  [0;34moverride_basecaller_cfg: [0;32mdna_r10.4.1_e8.2_400bps_hac@v4.3.0[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+[2m--------------------------------------------------------------------------------[0m
+If you use epi2me-labs/wf-bacterial-genomes for your analysis please cite:
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+
+[2m--------------------------------------------------------------------------------[0m
+This is epi2me-labs/wf-bacterial-genomes v1.4.1.
+[2m--------------------------------------------------------------------------------[0m
+Mar-09 18:55:39.859 [main] WARN  nextflow.Nextflow - Overriding basecall model with 'dna_r10.4.1_e8.2_400bps_hac@v4.3.0'.
+Mar-09 18:55:39.875 [main] INFO  nextflow.Nextflow - Searching input for [.fastq, .fastq.gz, .fq, .fq.gz] files.
+Mar-09 18:55:40.023 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `ingress,wf_common` for process with name fastcat
+Mar-09 18:55:40.031 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.031 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.038 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Mar-09 18:55:40.045 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=20; memory=31 GB; capacity=20; pollInterval=100ms; dumpInterval=5m
+Mar-09 18:55:40.048 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Mar-09 18:55:40.146 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:ingressCheckpoint
+Mar-09 18:55:40.148 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.149 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.166 [main] INFO  nextflow.Nextflow - Running Denovo assembly.
+Mar-09 18:55:40.182 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:deNovo
+Mar-09 18:55:40.184 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.185 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.209 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:alignReads
+Mar-09 18:55:40.210 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.211 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.224 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:alignmentCheckpoint
+Mar-09 18:55:40.225 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.225 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.232 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:readStats
+Mar-09 18:55:40.233 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.233 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.240 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:coverStats
+Mar-09 18:55:40.244 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.244 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.252 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:medaka` matches labels `medaka` for process with name calling_pipeline:splitRegions
+Mar-09 18:55:40.253 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.253 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.289 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:medaka` matches labels `medaka` for process with name calling_pipeline:medakaInference_consensus
+Mar-09 18:55:40.290 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.291 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.310 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:medaka` matches labels `medaka` for process with name calling_pipeline:medakaConsensus
+Mar-09 18:55:40.312 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.312 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.320 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:assemblyCheckpoint
+Mar-09 18:55:40.322 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.322 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.336 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:variantCheckpoint
+Mar-09 18:55:40.339 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.339 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.345 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:prokka` matches labels `prokka` for process with name calling_pipeline:runProkka
+Mar-09 18:55:40.347 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.347 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.358 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:annotationCheckpoint
+Mar-09 18:55:40.360 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.360 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.368 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:mlst` matches labels `mlst` for process with name calling_pipeline:run_isolates:mlstSearch
+Mar-09 18:55:40.369 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.369 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.376 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:run_isolates:getPointfinderSpecies
+Mar-09 18:55:40.377 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.377 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.386 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:amr` matches labels `amr` for process with name calling_pipeline:run_isolates:resfinder
+Mar-09 18:55:40.387 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.387 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.394 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:run_isolates:processResfinder
+Mar-09 18:55:40.395 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.396 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.404 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:seqsero2` matches labels `seqsero2` for process with name calling_pipeline:run_isolates:serotyping
+Mar-09 18:55:40.405 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.406 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.411 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:rgi` matches labels `rgi` for process with name calling_pipeline:run_isolates:rgi
+Mar-09 18:55:40.412 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.412 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.416 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:amrfinder` matches labels `amrfinder` for process with name calling_pipeline:run_isolates:amrfinder
+Mar-09 18:55:40.417 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.417 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.422 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:hamronize` matches labels `hamronize` for process with name calling_pipeline:run_isolates:rgi_hamronize
+Mar-09 18:55:40.423 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.423 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.428 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:hamronize` matches labels `hamronize` for process with name calling_pipeline:run_isolates:amrfinder_hamronize
+Mar-09 18:55:40.429 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.429 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.433 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:amr` matches labels `amr` for process with name calling_pipeline:run_isolates:resfinder2
+Mar-09 18:55:40.435 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.435 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.439 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:hamronize` matches labels `hamronize` for process with name calling_pipeline:run_isolates:resfinder_hamronize
+Mar-09 18:55:40.440 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.440 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.446 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:hamronize` matches labels `hamronize` for process with name calling_pipeline:run_isolates:hamronize
+Mar-09 18:55:40.447 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.447 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.461 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:amrCheckpoint
+Mar-09 18:55:40.462 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.463 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.466 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:prokka` matches labels `prokka` for process with name calling_pipeline:prokkaVersion
+Mar-09 18:55:40.468 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.468 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.473 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:hamronize` matches labels `hamronize` for process with name calling_pipeline:hamronizeVersion
+Mar-09 18:55:40.474 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.474 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.478 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:medaka` matches labels `medaka` for process with name calling_pipeline:medakaVersion
+Mar-09 18:55:40.480 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.480 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.484 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:mlst` matches labels `mlst` for process with name calling_pipeline:mlstVersion
+Mar-09 18:55:40.485 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.485 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.490 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:getVersions
+Mar-09 18:55:40.491 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.491 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.494 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:getParams
+Mar-09 18:55:40.495 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.495 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.522 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:collect_results
+Mar-09 18:55:40.523 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.524 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.534 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:createRunModel
+Mar-09 18:55:40.535 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.536 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.600 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:makeReport
+Mar-09 18:55:40.602 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.602 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.610 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:reportingCheckpoint
+Mar-09 18:55:40.612 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.612 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.618 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:makePerSampleReports
+Mar-09 18:55:40.619 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.619 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.629 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:perSampleReportingCheckpoint
+Mar-09 18:55:40.630 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.631 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.653 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `wf_common` for process with name calling_pipeline:accumulateCheckpoints
+Mar-09 18:55:40.655 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.655 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.664 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name calling_pipeline:collectFastqIngressResultsInDir
+Mar-09 18:55:40.665 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.666 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.693 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfbacterialgenomes` matches labels `wfbacterialgenomes` for process with name output
+Mar-09 18:55:40.694 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Mar-09 18:55:40.694 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Mar-09 18:55:40.697 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: resfinder, move_or_compress_fq_file, deNovo, calling_pipeline:getParams, calling_pipeline:mlstVersion, hamronize, medakaInference, checkBamHeaders, medakaVersion, alignReads, mergeBams, calling_pipeline:run_isolates:resfinder_hamronize, output, medakaVariant, rgi_hamronize, collectFastqIngressResultsInDir, medakaInference_consensus, amrCheckpoint, makeReport, calling_pipeline:collectFastqIngressResultsInDir, getVersions, calling_pipeline:coverStats, validateIndex, calling_pipeline:readStats, calling_pipeline:run_isolates:processResfinder, calling_pipeline:medakaConsensus, serotyping, calling_pipeline:ingressCheckpoint, getPointfinderSpecies, calling_pipeline:getVersions, calling_pipeline:run_isolates:amrfinder_hamronize, assemblyCheckpoint, calling_pipeline:run_isolates:resfinder2, coverStats, bamstats, calling_pipeline:runProkka, calling_pipeline:accumulateCheckpoints, resfinder2, amrfinder, calling_pipeline:run_isolates:rgi_hamronize, calling_pipeline:createRunModel, calling_pipeline:run_isolates:rgi, medakaInference_variant, fastcat, calling_pipeline:run_isolates:serotyping, mlstVersion, collect_results, resfinder_hamronize, accumulateCheckpoints, samtools_index, getParams, calling_pipeline:amrCheckpoint, calling_pipeline:prokkaVersion, calling_pipeline:alignReads, medakaConsensus, sortBam, calling_pipeline:medakaInference_consensus, validate_sample_sheet, calling_pipeline:run_isolates:resfinder, calling_pipeline:reportingCheckpoint, calling_pipeline:hamronizeVersion, calling_pipeline:medakaVersion, calling_pipeline:variantCheckpoint, calling_pipeline:run_isolates:mlstSearch, calling_pipeline:run_isolates:hamronize, readStats, runProkka, rgi, calling_pipeline:deNovo, calling_pipeline:run_isolates:getPointfinderSpecies, hamronizeVersion, createRunModel, calling_pipeline:collect_results, variantCheckpoint, prokkaVersion, perSampleReportingCheckpoint, calling_pipeline:makePerSampleReports, splitRegions, alignmentCheckpoint, calling_pipeline:alignmentCheckpoint, ingressCheckpoint, annotationCheckpoint, calling_pipeline:makeReport, calling_pipeline:splitRegions, split_fq_file, amrfinder_hamronize, processResfinder, calling_pipeline:run_isolates:amrfinder, calling_pipeline:annotationCheckpoint, reportingCheckpoint, mlstSearch, calling_pipeline:perSampleReportingCheckpoint, calling_pipeline:assemblyCheckpoint, makePerSampleReports, catSortBams
+Mar-09 18:55:40.699 [main] DEBUG nextflow.Session - Igniting dataflow network (49)
+Mar-09 18:55:40.700 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > fastcat
+Mar-09 18:55:40.700 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:ingressCheckpoint
+Mar-09 18:55:40.700 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:deNovo
+Mar-09 18:55:40.700 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:alignReads
+Mar-09 18:55:40.700 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:alignmentCheckpoint
+Mar-09 18:55:40.700 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:readStats
+Mar-09 18:55:40.700 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:coverStats
+Mar-09 18:55:40.700 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:splitRegions
+Mar-09 18:55:40.701 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:medakaInference_consensus
+Mar-09 18:55:40.701 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:medakaConsensus
+Mar-09 18:55:40.701 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:assemblyCheckpoint
+Mar-09 18:55:40.701 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:variantCheckpoint
+Mar-09 18:55:40.701 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:runProkka
+Mar-09 18:55:40.701 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:annotationCheckpoint
+Mar-09 18:55:40.701 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:mlstSearch
+Mar-09 18:55:40.701 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:getPointfinderSpecies
+Mar-09 18:55:40.702 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:resfinder
+Mar-09 18:55:40.702 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:processResfinder
+Mar-09 18:55:40.703 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:serotyping
+Mar-09 18:55:40.703 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:rgi
+Mar-09 18:55:40.704 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:amrfinder
+Mar-09 18:55:40.704 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:rgi_hamronize
+Mar-09 18:55:40.704 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:amrfinder_hamronize
+Mar-09 18:55:40.704 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:resfinder2
+Mar-09 18:55:40.705 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:resfinder_hamronize
+Mar-09 18:55:40.705 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:run_isolates:hamronize
+Mar-09 18:55:40.705 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:amrCheckpoint
+Mar-09 18:55:40.705 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:prokkaVersion
+Mar-09 18:55:40.705 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:hamronizeVersion
+Mar-09 18:55:40.705 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:medakaVersion
+Mar-09 18:55:40.706 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:mlstVersion
+Mar-09 18:55:40.706 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:getVersions
+Mar-09 18:55:40.706 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:getParams
+Mar-09 18:55:40.706 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:collect_results
+Mar-09 18:55:40.706 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:createRunModel
+Mar-09 18:55:40.706 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:makeReport
+Mar-09 18:55:40.706 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:reportingCheckpoint
+Mar-09 18:55:40.707 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:makePerSampleReports
+Mar-09 18:55:40.707 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:perSampleReportingCheckpoint
+Mar-09 18:55:40.707 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:accumulateCheckpoints
+Mar-09 18:55:40.707 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > calling_pipeline:collectFastqIngressResultsInDir
+Mar-09 18:55:40.707 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > output
+Mar-09 18:55:40.709 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_a7ca3345f40bc5ef: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/main.nf
+  Script_71cf3ce688c2ab9b: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/./modules/local/medaka.nf
+  Script_d9e3619109b1b7e6: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/./modules/local/isolates.nf
+  Script_9674c65acf93e4e1: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/./lib/ingress.nf
+  Script_29e49c8e03a0755c: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/./modules/local/checkpoints.nf
+Mar-09 18:55:40.709 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Mar-09 18:55:40.709 [main] DEBUG nextflow.Session - Session await
+Mar-09 18:55:40.872 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 18:55:40.874 [Task submitter] INFO  nextflow.Session - [b1/c520bc] Submitted process > calling_pipeline:prokkaVersion
+Mar-09 18:55:40.890 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 18:55:40.890 [Task submitter] INFO  nextflow.Session - [b5/2c061d] Submitted process > calling_pipeline:hamronizeVersion
+Mar-09 18:55:40.903 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 18:55:40.905 [Task submitter] INFO  nextflow.Session - [d8/1293dd] Submitted process > fastcat (1)
+Mar-09 18:55:40.918 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 18:55:40.919 [Task submitter] INFO  nextflow.Session - [bf/8acde9] Submitted process > calling_pipeline:getParams
+Mar-09 18:55:41.772 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: calling_pipeline:getParams; status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/bf/8acde91c7998863b8b90bd26aae013]
+Mar-09 18:55:41.774 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=60; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Mar-09 18:55:41.866 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: calling_pipeline:prokkaVersion; status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/b1/c520bc03ff606a0ca9da5e991d8f61]
+Mar-09 18:55:41.883 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 18:55:41.884 [Task submitter] INFO  nextflow.Session - [59/47ef9f] Submitted process > calling_pipeline:medakaVersion
+Mar-09 18:55:42.272 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: calling_pipeline:hamronizeVersion; status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/b5/2c061de312b5b4f7202dafe62b2c54]
+Mar-09 18:55:44.705 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: calling_pipeline:medakaVersion; status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/59/47ef9f58d2cff425d93d34c4274e1d]
+Mar-09 18:55:44.718 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 18:55:44.719 [Task submitter] INFO  nextflow.Session - [ee/29313a] Submitted process > calling_pipeline:mlstVersion
+Mar-09 18:55:45.441 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: calling_pipeline:mlstVersion; status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/ee/29313a4b3ae762d293637851610caf]
+Mar-09 18:55:45.461 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 18:55:45.462 [Task submitter] INFO  nextflow.Session - [d1/198d85] Submitted process > calling_pipeline:getVersions
+Mar-09 18:55:46.594 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: calling_pipeline:getVersions; status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/d1/198d85240f7b7c050de1ec7756cf0d]
+Mar-09 18:55:52.437 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: fastcat (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/d8/1293ddda076dae0f235df4211bf23c]
+Mar-09 18:55:52.497 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 18:55:52.499 [Task submitter] INFO  nextflow.Session - [84/3dbe5b] Submitted process > calling_pipeline:ingressCheckpoint (1)
+Mar-09 18:55:52.514 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 18:55:52.515 [Task submitter] INFO  nextflow.Session - [79/36227d] Submitted process > calling_pipeline:variantCheckpoint (1)
+Mar-09 18:55:52.534 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 18:55:52.535 [Task submitter] INFO  nextflow.Session - [4e/9ceba9] Submitted process > calling_pipeline:collectFastqIngressResultsInDir (1)
+Mar-09 18:55:52.559 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 18:55:52.561 [Task submitter] INFO  nextflow.Session - [b2/c5c81d] Submitted process > calling_pipeline:deNovo (1)
+Mar-09 18:55:53.260 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: calling_pipeline:ingressCheckpoint (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/84/3dbe5b4e87614f55814aed3384034d]
+Mar-09 18:55:53.282 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 18:55:53.283 [Task submitter] INFO  nextflow.Session - [9e/809e21] Submitted process > calling_pipeline:accumulateCheckpoints (1)
+Mar-09 18:55:53.365 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: calling_pipeline:variantCheckpoint (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/79/36227d91509b2b661425a7e2f78a35]
+Mar-09 18:55:53.398 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: calling_pipeline:collectFastqIngressResultsInDir (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/4e/9ceba9b895e4183b1e662781d76c38]
+Mar-09 18:55:54.053 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: calling_pipeline:accumulateCheckpoints (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/9e/809e215409f4771e2d3b31b1300b7f]
+Mar-09 18:55:54.071 [TaskFinalizer-1] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=60; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Mar-09 18:55:54.081 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 18:55:54.082 [Task submitter] INFO  nextflow.Session - [d2/9f9399] Submitted process > calling_pipeline:accumulateCheckpoints (2)
+Mar-09 18:55:54.833 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 13; name: calling_pipeline:accumulateCheckpoints (2); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/d2/9f93994730b80ebbc01ee9e3521a5f]
+Mar-09 19:00:40.194 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 9; name: calling_pipeline:deNovo (1); status: RUNNING; exit: -; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/b2/c5c81dea205019f5b8e65e76725075]
+Mar-09 19:05:40.227 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 9; name: calling_pipeline:deNovo (1); status: RUNNING; exit: -; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/b2/c5c81dea205019f5b8e65e76725075]
+Mar-09 19:08:47.723 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: calling_pipeline:deNovo (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/b2/c5c81dea205019f5b8e65e76725075]
+Mar-09 19:08:47.753 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:08:47.754 [Task submitter] INFO  nextflow.Session - [80/9112bc] Submitted process > calling_pipeline:alignReads (1)
+Mar-09 19:09:42.495 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 14; name: calling_pipeline:alignReads (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/80/9112bcb9bb0d8441de7ae4695485d4]
+Mar-09 19:09:42.514 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:09:42.515 [Task submitter] INFO  nextflow.Session - [bb/54ca0c] Submitted process > calling_pipeline:readStats (1)
+Mar-09 19:09:42.522 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:09:42.523 [Task submitter] INFO  nextflow.Session - [e9/88956d] Submitted process > calling_pipeline:alignmentCheckpoint (1)
+Mar-09 19:09:42.529 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:09:42.530 [Task submitter] INFO  nextflow.Session - [c4/c88401] Submitted process > calling_pipeline:coverStats (1)
+Mar-09 19:09:42.537 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:09:42.538 [Task submitter] INFO  nextflow.Session - [89/17eb24] Submitted process > calling_pipeline:splitRegions (1)
+Mar-09 19:09:43.292 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 18; name: calling_pipeline:alignmentCheckpoint (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/e9/88956d668b6ee824d287f95e6d8ca9]
+Mar-09 19:09:43.329 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:09:43.330 [Task submitter] INFO  nextflow.Session - [b1/c87180] Submitted process > calling_pipeline:accumulateCheckpoints (3)
+Mar-09 19:09:43.657 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 15; name: calling_pipeline:splitRegions (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/89/17eb249fa59c09589b08844e211804]
+Mar-09 19:09:43.682 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:09:43.682 [Task submitter] INFO  nextflow.Session - [44/9791dc] Submitted process > calling_pipeline:medakaInference_consensus (7)
+Mar-09 19:09:43.688 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:09:43.688 [Task submitter] INFO  nextflow.Session - [97/e53622] Submitted process > calling_pipeline:medakaInference_consensus (5)
+Mar-09 19:09:43.696 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:09:43.696 [Task submitter] INFO  nextflow.Session - [84/46f4ea] Submitted process > calling_pipeline:medakaInference_consensus (3)
+Mar-09 19:09:44.215 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 19; name: calling_pipeline:accumulateCheckpoints (3); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/b1/c87180f98e7313ea57b4837672b5e8]
+Mar-09 19:09:48.081 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 16; name: calling_pipeline:readStats (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/bb/54ca0c9e4a035719893ef8da0274a0]
+Mar-09 19:09:48.475 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 17; name: calling_pipeline:coverStats (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/c4/c88401d617a24a3aea009358afe6e5]
+Mar-09 19:09:56.316 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 26; name: calling_pipeline:medakaInference_consensus (7); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/44/9791dc792b2535b3b3d78efcbe8541]
+Mar-09 19:09:56.326 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:09:56.327 [Task submitter] INFO  nextflow.Session - [8c/2bd125] Submitted process > calling_pipeline:medakaInference_consensus (1)
+Mar-09 19:10:14.802 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 24; name: calling_pipeline:medakaInference_consensus (5); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/97/e53622ed5861e6ce502e3947b3f283]
+Mar-09 19:10:14.807 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:10:14.808 [Task submitter] INFO  nextflow.Session - [56/f977a1] Submitted process > calling_pipeline:medakaInference_consensus (4)
+Mar-09 19:10:20.947 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 22; name: calling_pipeline:medakaInference_consensus (3); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/84/46f4ea1002e5b5090a0e7eb9b2f773]
+Mar-09 19:10:20.952 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:10:20.952 [Task submitter] INFO  nextflow.Session - [8d/ba6f1e] Submitted process > calling_pipeline:medakaInference_consensus (2)
+Mar-09 19:10:33.062 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 20; name: calling_pipeline:medakaInference_consensus (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/8c/2bd125978ac9637f5548859f3c2cc9]
+Mar-09 19:10:33.070 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:10:33.071 [Task submitter] INFO  nextflow.Session - [ac/15e5ef] Submitted process > calling_pipeline:medakaInference_consensus (6)
+Mar-09 19:10:39.275 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 25; name: calling_pipeline:medakaInference_consensus (6); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/ac/15e5ef106e75ef2b7640cd7a886c89]
+Mar-09 19:10:40.277 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 2 -- submitted tasks are shown below
+~> TaskHandler[id: 23; name: calling_pipeline:medakaInference_consensus (4); status: RUNNING; exit: -; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/56/f977a1755885ae7dbf5e53139c1eed]
+~> TaskHandler[id: 21; name: calling_pipeline:medakaInference_consensus (2); status: RUNNING; exit: -; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/8d/ba6f1e78e2d615b99d6fb74a97441a]
+Mar-09 19:10:52.988 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 23; name: calling_pipeline:medakaInference_consensus (4); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/56/f977a1755885ae7dbf5e53139c1eed]
+Mar-09 19:10:57.635 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 21; name: calling_pipeline:medakaInference_consensus (2); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/8d/ba6f1e78e2d615b99d6fb74a97441a]
+Mar-09 19:10:57.683 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:10:57.684 [Task submitter] INFO  nextflow.Session - [d7/80c753] Submitted process > calling_pipeline:medakaConsensus (1)
+Mar-09 19:11:03.911 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 27; name: calling_pipeline:medakaConsensus (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/d7/80c7536132f50ccb7cbdc9414b73dd]
+Mar-09 19:11:03.928 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:11:03.929 [Task submitter] INFO  nextflow.Session - [88/be5335] Submitted process > output (1)
+Mar-09 19:11:03.937 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:11:03.938 [Task submitter] INFO  nextflow.Session - [0f/f29f8a] Submitted process > calling_pipeline:run_isolates:rgi (1)
+Mar-09 19:11:03.949 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:11:03.949 [Task submitter] INFO  nextflow.Session - [18/69bbb6] Submitted process > calling_pipeline:assemblyCheckpoint (1)
+Mar-09 19:11:03.957 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:11:03.958 [Task submitter] INFO  nextflow.Session - [aa/993db4] Submitted process > calling_pipeline:run_isolates:resfinder2 (1)
+Mar-09 19:11:03.965 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:11:03.966 [Task submitter] INFO  nextflow.Session - [09/5d9d70] Submitted process > calling_pipeline:run_isolates:mlstSearch (1)
+Mar-09 19:11:03.979 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:11:03.980 [Task submitter] INFO  nextflow.Session - [a0/7d4115] Submitted process > calling_pipeline:run_isolates:amrfinder (1)
+Mar-09 19:11:03.994 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:11:03.995 [Task submitter] INFO  nextflow.Session - [f6/62632c] Submitted process > calling_pipeline:runProkka (1)
+Mar-09 19:11:04.793 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 33; name: output (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/88/be53353a8c8a98462cb29a265d3b08]
+Mar-09 19:11:04.993 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 34; name: calling_pipeline:assemblyCheckpoint (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/18/69bbb636fc11b5154ee1fefaed2b58]
+Mar-09 19:11:05.012 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:11:05.013 [Task submitter] INFO  nextflow.Session - [9c/c3f820] Submitted process > calling_pipeline:accumulateCheckpoints (4)
+Mar-09 19:11:05.826 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 35; name: calling_pipeline:accumulateCheckpoints (4); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/9c/c3f82097aeb8970a10fafe2e3a48d9]
+Mar-09 19:11:08.760 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 29; name: calling_pipeline:run_isolates:mlstSearch (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/09/5d9d705d0dd958eebdb82cbe354fe9]
+Mar-09 19:11:08.781 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:11:08.781 [Task submitter] INFO  nextflow.Session - [50/c3c7a7] Submitted process > calling_pipeline:run_isolates:getPointfinderSpecies (1)
+Mar-09 19:11:09.573 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 36; name: calling_pipeline:run_isolates:getPointfinderSpecies (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/50/c3c7a70657367ada97a7d997552f03]
+Mar-09 19:11:09.593 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:11:09.593 [Task submitter] INFO  nextflow.Session - [67/0ce115] Submitted process > calling_pipeline:run_isolates:serotyping (1)
+Mar-09 19:11:09.599 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:11:09.599 [Task submitter] INFO  nextflow.Session - [dc/14b0c4] Submitted process > calling_pipeline:run_isolates:resfinder (1)
+Mar-09 19:11:11.900 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 38; name: calling_pipeline:run_isolates:serotyping (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/67/0ce1157c838cfa4e5822c305a69614]
+Mar-09 19:11:39.393 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 32; name: calling_pipeline:run_isolates:resfinder2 (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/aa/993db43c8aacb98e8f6db3d94fab82]
+Mar-09 19:11:39.410 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:11:39.410 [Task submitter] INFO  nextflow.Session - [46/0818e4] Submitted process > calling_pipeline:run_isolates:resfinder_hamronize (1)
+Mar-09 19:11:40.534 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 39; name: calling_pipeline:run_isolates:resfinder_hamronize (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/46/0818e44385436b526a8ce72522b52f]
+Mar-09 19:12:00.067 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 37; name: calling_pipeline:run_isolates:resfinder (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/dc/14b0c410989f2b086468511b922c90]
+Mar-09 19:12:00.087 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:12:00.088 [Task submitter] INFO  nextflow.Session - [95/dea3ea] Submitted process > calling_pipeline:run_isolates:processResfinder (1)
+Mar-09 19:12:02.826 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 40; name: calling_pipeline:run_isolates:processResfinder (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/95/dea3ea91af372b3742ec99f6ad90ae]
+Mar-09 19:12:02.843 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:12:02.843 [Task submitter] INFO  nextflow.Session - [ba/8c514c] Submitted process > calling_pipeline:amrCheckpoint (1)
+Mar-09 19:12:03.432 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 41; name: calling_pipeline:amrCheckpoint (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/ba/8c514c5b15cf70f8f1365b04a5bdfd]
+Mar-09 19:12:03.453 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:12:03.453 [Task submitter] INFO  nextflow.Session - [22/9f1c38] Submitted process > calling_pipeline:accumulateCheckpoints (5)
+Mar-09 19:12:04.233 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 42; name: calling_pipeline:accumulateCheckpoints (5); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/22/9f1c384ceefffb04c77f44b2477ac8]
+Mar-09 19:12:58.643 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 31; name: calling_pipeline:run_isolates:rgi (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/0f/f29f8a0fd8a84a21b002d89d7bcdd4]
+Mar-09 19:12:58.665 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:12:58.665 [Task submitter] INFO  nextflow.Session - [58/7e54ef] Submitted process > calling_pipeline:run_isolates:rgi_hamronize (1)
+Mar-09 19:12:59.760 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 43; name: calling_pipeline:run_isolates:rgi_hamronize (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/58/7e54ef8eb97fb2aad76809cd77211f]
+Mar-09 19:13:58.545 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 28; name: calling_pipeline:run_isolates:amrfinder (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/a0/7d41157172e355ea5311260daa8487]
+Mar-09 19:13:58.562 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:13:58.562 [Task submitter] INFO  nextflow.Session - [f2/5d768f] Submitted process > calling_pipeline:run_isolates:amrfinder_hamronize (1)
+Mar-09 19:13:59.547 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 44; name: calling_pipeline:run_isolates:amrfinder_hamronize (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/f2/5d768f7ef628dba921f3e9b3b86364]
+Mar-09 19:13:59.567 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:13:59.567 [Task submitter] INFO  nextflow.Session - [8c/5f8286] Submitted process > calling_pipeline:run_isolates:hamronize (1)
+Mar-09 19:14:00.600 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 45; name: calling_pipeline:run_isolates:hamronize (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/8c/5f82862b56fa0f54787640cbaa0b02]
+Mar-09 19:15:40.351 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 30; name: calling_pipeline:runProkka (1); status: RUNNING; exit: -; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/f6/62632cbf1f03acf7f1447fbad987b1]
+Mar-09 19:15:59.711 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 30; name: calling_pipeline:runProkka (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/f6/62632cbf1f03acf7f1447fbad987b1]
+Mar-09 19:15:59.733 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:15:59.734 [Task submitter] INFO  nextflow.Session - [85/6d2699] Submitted process > calling_pipeline:annotationCheckpoint (1)
+Mar-09 19:15:59.751 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:15:59.751 [Task submitter] INFO  nextflow.Session - [6c/900248] Submitted process > calling_pipeline:collect_results (1)
+Mar-09 19:15:59.769 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:15:59.770 [Task submitter] INFO  nextflow.Session - [7c/594c43] Submitted process > calling_pipeline:makePerSampleReports (1)
+Mar-09 19:15:59.804 [Task submitter] DEBUG n.processor.TaskPollingMonitor - %% executor local > tasks in the submission queue: 1 -- tasks to be submitted are shown below
+~> TaskHandler[id: 46; name: calling_pipeline:makeReport; status: NEW; exit: -; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/a9/caab9624e73dd134f5e529f6fd2ca2]
+Mar-09 19:16:00.457 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 47; name: calling_pipeline:annotationCheckpoint (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/85/6d2699f4a9056f386a2ac62fe685c1]
+Mar-09 19:16:01.464 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:16:01.464 [Task submitter] INFO  nextflow.Session - [21/44063b] Submitted process > calling_pipeline:accumulateCheckpoints (6)
+Mar-09 19:16:02.222 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 50; name: calling_pipeline:accumulateCheckpoints (6); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/21/44063bfa06b3f3dbd280b258bfc0b6]
+Mar-09 19:16:02.668 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 49; name: calling_pipeline:collect_results (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/6c/9002486481f60b4603013caaf0721a]
+Mar-09 19:16:02.674 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:16:02.675 [Task submitter] INFO  nextflow.Session - [a9/caab96] Submitted process > calling_pipeline:makeReport
+Mar-09 19:16:15.602 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 48; name: calling_pipeline:makePerSampleReports (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/7c/594c43c8dfb3a0a22a602f65c86a4c]
+Mar-09 19:16:15.609 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:16:15.610 [Task submitter] INFO  nextflow.Session - [f7/2ab8c9] Submitted process > calling_pipeline:createRunModel
+Mar-09 19:16:16.742 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 51; name: calling_pipeline:createRunModel; status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/f7/2ab8c9fec1bb5e9ad80b9ac264cfc4]
+Mar-09 19:16:16.746 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:16:16.747 [Task submitter] INFO  nextflow.Session - [ee/eff950] Submitted process > calling_pipeline:perSampleReportingCheckpoint (1)
+Mar-09 19:16:17.291 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 52; name: calling_pipeline:perSampleReportingCheckpoint (1); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/ee/eff9502cbc2ff65b0b6f065387beea]
+Mar-09 19:16:17.306 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:16:17.307 [Task submitter] INFO  nextflow.Session - [f7/a19ae6] Submitted process > calling_pipeline:accumulateCheckpoints (7)
+Mar-09 19:16:18.068 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 53; name: calling_pipeline:accumulateCheckpoints (7); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/f7/a19ae623a7b6051e3aebceed188d5a]
+Mar-09 19:16:20.400 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 46; name: calling_pipeline:makeReport; status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/a9/caab9624e73dd134f5e529f6fd2ca2]
+Mar-09 19:16:20.415 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:16:20.415 [Task submitter] INFO  nextflow.Session - [7a/0b604f] Submitted process > output (2)
+Mar-09 19:16:20.433 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:16:20.434 [Task submitter] INFO  nextflow.Session - [df/99398f] Submitted process > output (7)
+Mar-09 19:16:20.442 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:16:20.443 [Task submitter] INFO  nextflow.Session - [6e/ba05ee] Submitted process > output (3)
+Mar-09 19:16:20.452 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:16:20.452 [Task submitter] INFO  nextflow.Session - [22/30bccb] Submitted process > output (8)
+Mar-09 19:16:20.464 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:16:20.464 [Task submitter] INFO  nextflow.Session - [d6/b0c6f5] Submitted process > output (6)
+Mar-09 19:16:20.476 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:16:20.476 [Task submitter] INFO  nextflow.Session - [4a/783a27] Submitted process > output (5)
+Mar-09 19:16:20.485 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:16:20.486 [Task submitter] INFO  nextflow.Session - [61/61d266] Submitted process > output (4)
+Mar-09 19:16:20.494 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:16:20.494 [Task submitter] INFO  nextflow.Session - [1b/72fd84] Submitted process > output (10)
+Mar-09 19:16:20.506 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:16:20.507 [Task submitter] INFO  nextflow.Session - [d0/06661c] Submitted process > output (11)
+Mar-09 19:16:20.517 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:16:20.518 [Task submitter] INFO  nextflow.Session - [c2/0f9238] Submitted process > calling_pipeline:reportingCheckpoint
+Mar-09 19:16:20.533 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:16:20.534 [Task submitter] INFO  nextflow.Session - [ef/f678eb] Submitted process > output (9)
+Mar-09 19:16:20.546 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:16:20.547 [Task submitter] INFO  nextflow.Session - [c2/4e220a] Submitted process > output (13)
+Mar-09 19:16:20.558 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:16:20.558 [Task submitter] INFO  nextflow.Session - [69/8d4d78] Submitted process > output (12)
+Mar-09 19:16:21.415 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 55; name: output (2); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/7a/0b604f3c5c9e134a97c43c5f79432a]
+Mar-09 19:16:21.480 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 60; name: output (7); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/df/99398ff8b0e629d7e73b289859216e]
+Mar-09 19:16:21.532 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 56; name: output (3); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/6e/ba05eec9f2732e846858e40c8a2662]
+Mar-09 19:16:21.663 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 61; name: output (8); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/22/30bccb3ffc4d082b073b9f28862149]
+Mar-09 19:16:21.745 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 63; name: output (10); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/1b/72fd84a6c2eb1a69a10d6d13db97e2]
+Mar-09 19:16:21.840 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 58; name: output (5); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/4a/783a27cbfe14ac46a8edcf69177cba]
+Mar-09 19:16:21.894 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 59; name: output (6); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/d6/b0c6f512d5c9a46327f5956bcd0a70]
+Mar-09 19:16:22.028 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 57; name: output (4); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/61/61d266c1c83ff055440f59b9fcfc07]
+Mar-09 19:16:22.052 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 64; name: output (11); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/d0/06661c4c19d6f3d0ff577611fca235]
+Mar-09 19:16:22.102 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 54; name: calling_pipeline:reportingCheckpoint; status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/c2/0f9238e6e8da5e661cd29aab50faf6]
+Mar-09 19:16:22.116 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Mar-09 19:16:22.117 [Task submitter] INFO  nextflow.Session - [0b/445cac] Submitted process > calling_pipeline:accumulateCheckpoints (8)
+Mar-09 19:16:22.249 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 62; name: output (9); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/ef/f678eb534501d5382577d434351baf]
+Mar-09 19:16:22.276 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 66; name: output (13); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/c2/4e220abb8f92aebf3fb44bdda55597]
+Mar-09 19:16:22.304 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 65; name: output (12); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/69/8d4d78367df76389fc3e603613f3ee]
+Mar-09 19:16:22.975 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 67; name: calling_pipeline:accumulateCheckpoints (8); status: COMPLETED; exit: 0; error: -; workDir: /home/m3/epi2melabs/workflows/epi2me-labs/wf-bacterial-genomes/work/0b/445cac17b6fff8d4188c404e593010]
+Mar-09 19:16:22.980 [main] DEBUG nextflow.Session - Session await > all processes finished
+Mar-09 19:16:23.076 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Mar-09 19:16:23.076 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Mar-09 19:16:23.081 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'TaskFinalizer' shutdown completed (hard=false)
+Mar-09 19:16:23.081 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+Mar-09 19:16:23.540 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=67; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=1h 17m; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=13; peakCpus=13; peakMemory=30 GB; ]
+Mar-09 19:16:23.540 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Mar-09 19:16:23.542 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Mar-09 19:16:24.585 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+Mar-09 19:16:24.888 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Mar-09 19:16:24.929 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Mar-09 19:16:24.929 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
