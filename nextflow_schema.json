@@ -1,0 +1,335 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://raw.githubusercontent.com/./master/nextflow_schema.json",
+    "title": "epi2me-labs/wf-bacterial-genomes",
+    "workflow_title" : "Bacterial assembly and annotation workflow",
+    "description": "Assembly, variant calling, and annotation of bacterial genomes.",
+    "demo_url": "https://ont-exd-int-s3-euwst1-epi2me-labs.s3.amazonaws.com/wf-bacterial-genomes/wf-bacterial-genomes-demo.tar.gz",
+    "aws_demo_url": "https://ont-exd-int-s3-euwst1-epi2me-labs.s3.amazonaws.com/wf-bacterial-genomes/wf-bacterial-genomes-demo/aws.nextflow.config",
+    "url": "https://github.com/epi2me-labs/wf-bacterial-genomes",
+    "type": "object",
+    "definitions": {
+        "input": {
+            "title": "Input Options",
+            "type": "object",
+            "fa_icon": "fas fa-arrow-right",
+            "description": "Parameters for finding and handling input data for analysis.",
+            "properties": {
+                "fastq": {
+                    "type": "string",
+                    "title": "FASTQ",
+                    "format": "path",
+                    "description": "FASTQ files to use in the analysis.",
+                    "help_text": "This accepts one of three cases: (i) the path to a single FASTQ file; (ii) the path to a top-level directory containing FASTQ files; (iii) the path to a directory containing one level of sub-directories which in turn contain FASTQ files. In the first and second case, a sample name can be supplied with `--sample`. In the last case, the data is assumed to be multiplexed with the names of the sub-directories as barcodes. In this case, a sample sheet can be provided with `--sample_sheet`."
+                },
+                "bam": {
+                    "type": "string",
+                    "title": "BAM",
+                    "format": "path",
+                    "description": "BAM or unaligned BAM (uBAM) files to use in the analysis.",
+                    "help_text": "This accepts one of three cases: (i) the path to a single BAM file; (ii) the path to a top-level directory containing BAM files; (iii) the path to a directory containing one level of sub-directories which in turn contain BAM files. In the first and second case, a sample name can be supplied with `--sample`. In the last case, the data is assumed to be multiplexed with the names of the sub-directories as barcodes. In this case, a sample sheet can be provided with `--sample_sheet`."
+                },
+                "reference_based_assembly": {
+                    "type": "boolean",
+                    "default": false,   
+                    "title": "Reference-based assembly",
+                    "help_text": "By default de novo assembly will be performed with Flye. Enable this to instead perform a reference-based consensus. A reference must be provided.",
+                    "description": "Enable reference guided assembly instead of de novo assembly."
+                },
+                "reference": {
+                    "type": "string",
+                    "title": "Reference FASTA",
+                    "format": "file-path",
+                    "description": "Reference sequence FASTA file.",
+                    "help_text": "The reference sequence is used when performing reference-based assembly."
+                },
+                "analyse_unclassified": {
+                    "type": "boolean",
+                    "default": false,
+                    "title": "Analyse unclassified reads",
+                    "description": "Analyse unclassified reads from input directory. By default the workflow will not process reads in the unclassified directory.",
+                    "help_text": "If selected and if the input is a multiplex directory the workflow will also process the unclassified directory."
+                },
+                "client_fields": {
+                    "type": "string",
+                    "format": "file-path",
+                    "description": "A JSON file of key value pairs to display on the report.",
+                    "help_text": "This is used to populate a table of additional information (for example, about upstream components of an assay) to the workflow report.",
+                    "hidden": true
+                }
+            },
+            "allOf": [
+                {
+                    "oneOf": [
+                        {
+                            "required": [
+                                "fastq"
+                            ]
+                        },
+                        {
+                            "required": [
+                                "bam"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "dependencies": {
+                "reference": [
+                    "reference_based_assembly"
+                ]
+            }
+        },
+        "samples": {
+            "title": "Sample Options",
+            "type": "object",
+            "fa_icon": "fas fa-vials",
+            "description": "Parameters that relate to samples such as sample sheets and sample names.",
+            "properties": {
+                "sample_sheet": {
+                    "type": "string",
+                    "title": "Sample sheet",
+                    "format": "file-path",
+                    "description": "A CSV file used to map barcodes to sample aliases. The sample sheet can be provided when the input data is a directory containing sub-directories with FASTQ files.",
+                    "help_text": "The sample sheet is a CSV file with, minimally, columns named `barcode` and `alias`. Extra columns are allowed. A `type` column is required for certain workflows and should have the following values; `test_sample`, `positive_control`, `negative_control`, `no_template_control`."
+                },
+                "sample": {
+                    "type": "string",
+                    "description": "A single sample name for non-multiplexed data. Permissible if passing a single .fastq(.gz) file or directory of .fastq(.gz) files."
+                }
+            }
+        },
+        "isolate_options": {
+            "title": "Isolate options",
+            "type": "object",
+            "fa_icon": "fas fa-arrow-left",
+            "description": "Parameters relating to antimicrobial resistance analysis with ResFinder.",
+            "properties": {
+                "isolates": {
+                    "type": "boolean",
+                    "title": "Isolates mode",
+                    "default": false,
+                    "description": "Run the Isolates pipeline on the assembly results if set to True.",
+                    "help_text": "Isolates mode adds further analysis options to the workflow such as multi-locus sequence typing and antimicrobial resistance calling, as well as producing single reports for each sample in the run."
+                },
+                "resfinder_threshold": {
+                    "type": "string",
+                    "title": "Resfinder gene identity threshold",
+                    "default": "0.8",
+                    "description": "Threshold of required identity to report a match between a gene in the ResFinder database and the assembly. Valid interval: 0.00-1.00",
+                    "help_text": "Identity refers to the ratio of base pairs that match between the sequence in your assembly and that of the sequence in the ResFinder database. Increasing the threshold will results in fewer, but more accurate hits against the database."
+                },
+                "resfinder_coverage": {
+                    "type": "string",
+                    "title": "Resfinder gene coverage threshold",
+                    "default": "0.6",
+                    "description": "Minimum coverage (breadth-of) threshold required to report a match between a gene in the ResFinder database and the assembly. Valid interval: 0.00-1.00",
+                    "help_text": "The amount of an AMR gene that has to be present within the assembly as compared to the reference in the ResFinder database."
+                }
+            }
+        },
+        "advanced_options": {
+            "title": "Advanced Options",
+            "type": "object",
+            "fa_icon": "far fa-question-circle",
+            "description": "Advanced options for configuring processes inside the workflow.",
+            "help_text": "These advanced options do not need to be changed for typical use, but allow fine tuning of workflows for users who want more control over the workflow.",
+            "properties": {
+                "override_basecaller_cfg": {
+                    "type": "string",
+                    "title": "Override basecaller configuration",
+                    "description": "Override auto-detected basecaller model that processed the signal data; used to select an appropriate Medaka model.",
+                    "help_text": "Per default, the workflow tries to determine the basecall model from the input data. This parameter can be used to override the detected value (or to provide a model name if none was found in the inputs). However, users should only do this if they know for certain which model was used as selecting the wrong option might give sub-optimal results. A list of recent models can be found here: https://github.com/nanoporetech/dorado#DNA-models.",
+                    "enum": [
+                        "dna_r10.4.1_e8.2_400bps_sup@v5.0.0",
+                        "dna_r10.4.1_e8.2_400bps_hac@v5.0.0",
+                        "dna_r10.4.1_e8.2_400bps_sup@v4.3.0",
+                        "dna_r10.4.1_e8.2_400bps_hac@v4.3.0",
+                        "dna_r10.4.1_e8.2_400bps_sup@v4.2.0",
+                        "dna_r10.4.1_e8.2_400bps_hac@v4.2.0",
+                        "dna_r10.4.1_e8.2_260bps_hac@v4.1.0",
+                        "dna_r10.4.1_e8.2_260bps_sup@v4.1.0",
+                        "dna_r10.4.1_e8.2_400bps_hac@v4.1.0",
+                        "dna_r10.4.1_e8.2_400bps_sup@v4.1.0",
+                        "dna_r10.4.1_e8.2_260bps_hac@v4.0.0",
+                        "dna_r10.4.1_e8.2_260bps_sup@v4.0.0",
+                        "dna_r10.4.1_e8.2_400bps_hac@v4.0.0",
+                        "dna_r10.4.1_e8.2_400bps_sup@v4.0.0",
+                        "dna_r10.4.1_e8.2_400bps_hac@v3.5.2",
+                        "dna_r10.4.1_e8.2_400bps_sup@v3.5.2",
+                        "dna_r9.4.1_e8_fast@v3.4",
+                        "dna_r9.4.1_e8_hac@v3.3",
+                        "dna_r9.4.1_e8_sup@v3.3",
+                        "dna_r10.4.1_e8.2_400bps_hac_prom",
+                        "dna_r9.4.1_450bps_hac_prom",
+                        "dna_r10.3_450bps_hac",
+                        "dna_r10.3_450bps_hac_prom",
+                        "dna_r10.4.1_e8.2_260bps_hac",
+                        "dna_r10.4.1_e8.2_260bps_hac_prom",
+                        "dna_r10.4.1_e8.2_400bps_hac",
+                        "dna_r9.4.1_450bps_hac",
+                        "dna_r9.4.1_e8.1_hac",
+                        "dna_r9.4.1_e8.1_hac_prom"
+                    ]
+                },
+                "chunk_size": {
+                    "type": "integer",
+                    "title": "Chunk size",
+                    "default": 1000000,
+                    "description": "Splits the reference sequences (or Flye assembly) into overlapping sub-regions of this size when processing with Medaka.",
+                    "hidden": true
+                },
+                "run_prokka": {
+                    "type": "boolean",
+                    "title": "Annotate genome with Prokka",
+                    "description": "Run prokka on consensus sequence",
+                    "default": true,
+                    "help_text": "Will provide an output file with a list of annotations for your sequence. Optional because it can take some time."
+                },
+                "prokka_opts": {
+                    "type": "string",
+                    "Title": "Additional Prokka options",
+                    "description": "Command-line arguments for prokka",
+                    "help_text": "[Command line arguments](https://github.com/tseemann/prokka#command-line-options) which can be used to alter prokka output annotation files."
+                },
+                "flye_genome_size": {
+                    "type": "integer",
+                    "Title": "Estimated genome size",
+                    "description": "Estimated genome size for de novo assembly in non-SI prefix format (e.g 5000000 for 5 Mb genome)",
+                    "help_text": "This setting is used in conjunction with `flye_asm_coverage` to subsample the reads used in the initial disjointig step only; all reads are used in subsequent steps. The values in the two parameters are used to calculate a target yield used to subsample the longest reads in the dataset, see [Flye docs](https://github.com/fenderglass/Flye/blob/flye/docs/USAGE.md#-quick-usage) for more information. *Note* For runs with mixed genome sizes, preference the larger genome size."
+                },
+                "flye_asm_coverage": {
+                    "type": "integer",
+                    "Title": "Target coverage for assembly subsampling",
+                    "description": "Target coverage to use for subsampling in de novo assembly",
+                    "help_text": "This setting is used in conjunction with `flye_genome_size` to subsample the reads used in the initial disjointig step only; all reads are used in subsequent steps. The values in the two parameters are used to calculate a target yield used to subsample the longest reads in the dataset, see [Flye docs](https://github.com/fenderglass/Flye/blob/flye/docs/USAGE.md#-quick-usage) for more information."
+                },
+                "flye_opts": {
+                    "type": "string",
+                    "Title": "Additional flye options",
+                    "description": "Command-line arguments for flye",
+                    "help_text": "[Command line arguments](https://github.com/fenderglass/Flye/blob/flye/docs/USAGE.md#-quick-usage) which can be used to alter the de novo assembly process. Enter the command as quoted string (e.g '--meta --iterations 2'). Flye's `--genome-size` and `--asm-coverage` parameters can be set directly in the workflow with `--flye_genome_size` and `--flye_asm_coverage`, respectively."
+                },
+                "min_read_length": {
+                    "type": "integer",
+                    "default": 1000,
+                    "Title": "Minimum read length",
+                    "description": "Reads below this threshold will be removed from analysis."
+                }
+            },
+            "dependencies": {
+                "flye_genome_size": [
+                    "flye_asm_coverage"
+                ],
+                "flye_asm_coverage": [
+                    "flye_genome_size"
+                ]
+            }
+        },
+        "output": {
+            "title": "Output Options",
+            "type": "object",
+            "fa_icon": "fas fa-arrow-left",
+            "description": "Parameters for saving and naming workflow outputs.",
+            "properties": {
+                "out_dir": {
+                    "type": "string",
+                    "title": "Output directory",
+                    "default": "output",
+                    "format": "directory-path",
+                    "description": "Directory for output of all workflow results."
+                }
+            }
+        },
+        "misc": {
+            "title": "Miscellaneous Options",
+            "type": "object",
+            "description": "Everything else.",
+            "default": "",
+            "properties": {
+                "threads": {
+                    "type": "integer",
+                    "title": "Threads",
+                    "default": 3,
+                    "description": "Number of CPU threads.",
+                    "help_text": "Provided to alignment, flye assembly and prokka steps to improve performance."
+                },
+                "disable_ping": {
+                    "type": "boolean",
+                    "default": false,
+                    "title": "Disable ping",
+                    "description": "Enable to prevent sending a workflow ping."
+                },
+                "help": {
+                    "type": "boolean",
+                    "default": false,   
+                    "description": "Display help text.",
+                    "fa_icon": "fas fa-question-circle",
+                    "hidden": true
+                },
+                "version": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Display version and exit.",
+                    "fa_icon": "fas fa-question-circle",
+                    "hidden": true
+                }
+            }
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "#/definitions/input"
+        },
+        {
+            "$ref": "#/definitions/samples"
+        },
+        {
+            "$ref": "#/definitions/output"
+        },
+        {
+            "$ref": "#/definitions/isolate_options"
+        },
+        {
+            "$ref": "#/definitions/advanced_options"
+        },
+        {
+            "$ref": "#/definitions/misc"
+        }
+    ],
+    "properties": {
+        "aws_image_prefix": {
+            "type": "string",
+            "hidden": true
+        },
+        "aws_queue": {
+            "type": "string",
+            "hidden": true
+        },
+        "monochrome_logs": {
+            "type": "boolean",
+            "hidden": true
+        },
+        "validate_params": {
+            "type": "boolean",
+            "default": true,
+            "hidden": true
+        },
+        "show_hidden_params": {
+            "type": "boolean",
+            "hidden": true
+        }
+    },
+    "resources": {
+        "recommended": {
+            "cpus": 16,
+            "memory": "64GB"
+        },
+        "minimum": {
+            "cpus": 8,
+            "memory": "32GB"
+        },
+        "run_time": "20-40 minutes per sample with ~50x coverage using minimum requirements",
+        "arm_support": true
+    }
+}
